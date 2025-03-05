@@ -1,0 +1,688 @@
+<RegistrationScreen>:
+    username: username_input
+    password: password_input
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: [50, 100, 50, 100]
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Регистрация"
+            font_size: 36
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            color: (0.251, 0.161, 0.078, 1)
+
+        TextInput:
+            id: username_input
+            hint_text: "Введите имя пользователя"
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        TextInput:
+            id: password_input
+            hint_text: "Введите пароль"
+            password: True
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        Button:
+            text: "Зарегистрироваться"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            on_press: root.handle_register()
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.653, 0.451, 0.286, 1)
+            color: 1, 1, 1, 1
+            font_size: 18
+            canvas.before:
+                Color:
+                    rgba: (0.451, 0.298, 0.161, 1)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25, ]
+            pos_hint: {'top': 0.9}
+
+        Button:
+            text: "Назад"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            on_press: app.root.current = "login"
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.653, 0.451, 0.286, 1)
+            color: 1, 1, 1, 1
+            font_size: 18
+            canvas.before:
+                Color:
+                    rgba: (0.451, 0.298, 0.161, 1)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25, ]
+
+        Label:
+            text: root.error_message
+            color: (0.251, 0.161, 0.078, 1)
+
+<LoginScreen>:
+    name: "login"
+    username: username_input
+    password: password_input
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: [50, 100, 50, 100]
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Вход"
+            font_size: 36
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            color: (0.251, 0.161, 0.078, 1)
+
+        TextInput:
+            id: username_input
+            hint_text: "Введите имя пользователя"
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        TextInput:
+            id: password_input
+            hint_text: "Введите пароль"
+            password: True
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        Button:
+            text: "Войти"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            on_press: root.handle_login()
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.653, 0.451, 0.286, 1)
+            color: 1, 1, 1, 1
+            font_size: 18
+            canvas.before:
+                Color:
+                    rgba: (0.451, 0.298, 0.161, 1)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25, ]
+            pos_hint: {'top': 0.9}
+
+        Button:
+            text: "Регистрация"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            on_press: root.register()  # Вызывает метод register() в LoginScreen
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.653, 0.451, 0.286, 1)
+            color: 1, 1, 1, 1
+            font_size: 18
+            canvas.before:
+                Color:
+                    rgba: (0.451, 0.298, 0.161, 1)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25, ]
+
+        Label:
+            text: root.error_message
+            color: (0.251, 0.161, 0.078, 1)
+
+<CalendarScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: [20, 10]
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        # Навигация по месяцам
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+            spacing: 10
+            background_color: (0.949, 0.808, 0.635, 1)
+
+            Button:
+                text: "<"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_x: None
+                width: 50
+                on_press: root.show_prev_month()
+                background_color: (0.851, 0.675, 0.510, 1)
+
+            Label:
+                id: month_label
+                text: ""  # Будет обновляться динамически
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
+                color: (0.251, 0.161, 0.078, 1)
+
+            Button:
+                text: ">"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_x: None
+                width: 50
+                on_press: root.show_next_month()
+                background_color: (0.851, 0.675, 0.510, 1)
+
+        # Заголовки дней недели
+        GridLayout:
+            cols: 7
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+                text: "Пн"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                size_hint_y: None
+                height: 40
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Вт"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Ср"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Чт"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Пт"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Сб"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+            Label:
+                text: "Вс"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+
+        # Сетка календаря
+        ScrollView:
+            GridLayout:
+                id: calendar_grid
+                cols: 7
+                size_hint_y: None
+                height: self.minimum_height
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            orientation: 'horizontal'
+            padding: [10, 5]
+            canvas.before:
+                Color:
+                    rgba: (0.949, 0.808, 0.635, 1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "Для связи обращайтесь: tg - @astydor"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_x: None
+                width: self.parent.width
+                halign: "center"
+                valign: "middle"
+                color: (0.251, 0.161, 0.078, 1)
+
+<NoteScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: [50, 25, 50, 50]
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: "Как прошел день?"
+                    size_hint_y: None
+                    height: 50
+                    color: (0.251, 0.161, 0.078, 1)
+
+                GridLayout:
+                    id: day_buttons
+                    cols: 5
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 50
+                    row_force_default: True
+
+                    Button:
+                        text: "Замечательно"
+                        on_press: root.set_day_rating(self)
+
+                    Button:
+                        text: "Хорошо"
+                        on_press: root.set_day_rating(self)
+
+                    Button:
+                        text: "Обычно"
+                        on_press: root.set_day_rating(self)
+
+                    Button:
+                        text: "Грустно"
+                        on_press: root.set_day_rating(self)
+
+                    Button:
+                        text: "Плохо"
+                        on_press: root.set_day_rating(self)
+
+                Label:
+                    text: "Эмоции"
+                    size_hint_y: None
+                    height: 50
+                    color: (0.251, 0.161, 0.078, 1)
+
+                GridLayout:
+                    id: emotion_buttons
+                    cols: 4
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 50
+                    row_force_default: True
+
+                    Button:
+                        text: "Счастье"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Чилл"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Гордость"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Ожидание"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Радость"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Энергия"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Любовь"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Обновление"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Подавленность"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Одиночество"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Тревога"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Грусть"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Злость"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Давление"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Раздражение"
+                        on_press: root.toggle_emotion(self)
+
+                    Button:
+                        text: "Усталость"
+                        on_press: root.toggle_emotion(self)
+
+                Label:
+                    text: "Люди"
+                    size_hint_y: None
+                    height: 50
+                    color: (0.251, 0.161, 0.078, 1)
+
+                GridLayout:
+                    id: people_buttons
+                    cols: 5
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 50
+                    row_force_default: True
+
+                    Button:
+                        text: "Друзья"
+                        on_press: root.toggle_people(self)
+
+                    Button:
+                        text: "Семья"
+                        on_press: root.toggle_people(self)
+
+                    Button:
+                        text: "Партнер"
+                        on_press: root.toggle_people(self)
+
+                    Button:
+                        text: "Знакомый"
+                        on_press: root.toggle_people(self)
+
+                    Button:
+                        text: "Никто"
+                        on_press: root.toggle_people(self)
+
+                Label:
+                    text: "Погода"
+                    size_hint_y: None
+                    height: 50
+                    color: (0.251, 0.161, 0.078, 1)
+
+                GridLayout:
+                    id: weather_container
+                    cols: 5
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 50
+                    row_force_default: True
+
+                    Button:
+                        text: "Солнечно"
+                        on_press: root.set_weather(self)
+
+                    Button:
+                        text: "Облачно"
+                        on_press: root.set_weather(self)
+
+                    Button:
+                        text: "Дождь"
+                        on_press: root.set_weather(self)
+
+                    Button:
+                        text: "Снежно"
+                        on_press: root.set_weather(self)
+
+                    Button:
+                        text: "Ветрено"
+                        on_press: root.set_weather(self)
+
+        Label:
+            text: "Заметка"
+            size_hint_y: None
+            height: 50
+            color: (0.251, 0.161, 0.078, 1)
+
+        ScrollView:
+            size_hint_y: None
+            height: "100dp"
+            do_scroll_y: True
+
+            TextInput:
+                id: note_input
+                hint_text: "Введите заметку"
+                multiline: True
+                size_hint_y: 0.7
+                background_color: (0.851, 0.675, 0.510, 1)
+                foreground_color: (0.251, 0.161, 0.078, 1)
+                font_size: 18
+
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+
+            Button:
+                text: "Сохранить заметку"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_y: 0.1
+                on_press: root.save_note()
+                background_color: (0.451, 0.298, 0.161, 1)
+                font_size: 18
+                size_hint: (1, None)
+                height: dp(40)
+
+            Button:
+                text: "Назад"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_y: 0.1
+                on_press: root.go_back()
+                background_color: (0.653, 0.451, 0.286, 1)
+                font_size: 18
+                size_hint: (1, None)
+                height: dp(40)
+
+            Button:
+                text: "Пользовательские привычки"
+                font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+                size_hint_y: 0.1
+                on_press: root.go_to_user_habits()
+                background_color: (0.653, 0.451, 0.286, 1)
+                font_size: 18
+                size_hint: (1, None)
+                height: dp(40)
+
+<UserHabitsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: [50, 25, 50, 50]
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Пользовательские привычки"
+            size_hint_y: None
+            height: 50
+            color: (0.251, 0.161, 0.078, 1)
+
+        ScrollView:
+            id: scrollview
+
+            BoxLayout:
+                id: user_habits_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 50
+                row_force_default: True
+
+        Button:
+            text: "Сохранить"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint_y: 0.1
+            on_press: root.save_selected_habits()
+            background_color: (0.451, 0.298, 0.161, 1)
+            font_size: 18
+            size_hint: (1, None)
+            height: dp(40)
+
+        Button:
+            text: "Назад"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint_y: 0.1
+            on_press: root.go_back()
+            background_color: (0.653, 0.451, 0.286, 1)
+            font_size: 18
+            size_hint: (1, None)
+            height: dp(40)
+
+        Button:
+            text: "*"
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint_y: 0.1
+            on_press: root.go_back_note_habit_form()
+            background_color: (0.653, 0.451, 0.286, 1)
+            font_size: 18
+            size_hint: (1, None)
+            height: dp(40)
+
+<HabitFormScreen>:
+    name: 'habit_form'
+    BoxLayout:
+        orientation: "vertical"
+        padding: [20, 10]
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: (0.949, 0.808, 0.635, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        # Поле для ввода названия блока
+        TextInput:
+            id: block_name_input
+            hint_text: "Введите название блока"
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        # Поле для ввода количества кнопок
+        TextInput:
+            id: button_count_input
+            hint_text: "Введите кол-во кнопок (4-16)"
+            multiline: False
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.851, 0.675, 0.510, 1)
+            foreground_color: (0.251, 0.161, 0.078, 1)
+            padding: [20, 15]
+
+        # Кнопка для создания блока
+        Button:
+            id: create_button
+            text: "Создать блоки"
+            on_press: root.create_block(block_name_input.text, int(button_count_input.text) if button_count_input.text.isdigit() else 4)
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint: (1, None)
+            height: dp(50)
+            background_normal: ''
+            background_color: (0.653, 0.451, 0.286, 1)
+            color: 1, 1, 1, 1
+            font_size: 18
+            canvas.before:
+                Color:
+                    rgba: (0.451, 0.298, 0.161, 1)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25, ]
+            pos_hint: {'top': 0.9}
+
+        # Контейнер для динамически создаваемых кнопок
+        BoxLayout:
+            id: button_box
+            orientation: 'vertical'
+
+        Button:
+            text: "Сохранить"
+            on_press: root.save_block()
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint_y: 0.1
+            background_color: (0.451, 0.298, 0.161, 1)
+            font_size: 18
+            size_hint: (1, None)
+            height: dp(40)
+
+        Button:
+            text: "Назад"
+            on_press: root.go_back_note_screen()
+            font_name: "D:/education/kursach/LifeDots/LifeDots/assets/fronts/Roboto-Bold.ttf"
+            size_hint_y: 0.1
+            background_color: (0.653, 0.451, 0.286, 1)
+            font_size: 18
+            size_hint: (1, None)
+            height: dp(40)
